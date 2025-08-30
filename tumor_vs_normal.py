@@ -340,8 +340,8 @@ incorrect_preds = [r for r in results if r[-1] == False]
 correct_preds.sort(key=lambda x: x[3], reverse=True)
 incorrect_preds.sort(key=lambda x: x[3], reverse=True)
 
-plot_gradcam_grid(correct_preds, title="✅ Grad-CAM: Correct Predictions", n=5)
-plot_gradcam_grid(incorrect_preds, title="❌ Grad-CAM: Incorrect Predictions", n=5)
+plot_gradcam_grid(correct_preds, title="Grad-CAM: Correct Predictions", n=5)
+plot_gradcam_grid(incorrect_preds, title="Grad-CAM: Incorrect Predictions", n=5)
 
 import torch
 import torch.nn.functional as F
@@ -383,7 +383,7 @@ def plot_false_negatives_grid(fn_results, n=5):
         axes[i].set_title(f"FN: True=PA, Pred=Normal ({confidence:.2f})", fontsize=10)
         axes[i].axis('off')
 
-    plt.suptitle("❌ Grad-CAM: False Negatives (Missed Tumors)", fontsize=16)
+    plt.suptitle("Grad-CAM: False Negatives (Missed Tumors)", fontsize=16)
     plt.tight_layout(rect=[0, 0, 1, 0.93])
     plt.show()
 
